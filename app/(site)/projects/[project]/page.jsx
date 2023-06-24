@@ -6,8 +6,8 @@ const Project = async ({ params }) => {
   const project = await getProject(slug);
 
   return (
-    <article className="z-10 h-screen flex flex-col relative max-w-[1440px] items-center justify-evenly text-center xl:text-left xl:flex-row mx-auto p-5 text-themegray">
-      <section className="flex flex-col xl:flex-row space-x-5 space-y-7 xl:space-y-0 items-center">
+    <article className="relative z-10 mx-auto flex h-screen max-w-[1440px] flex-col items-center justify-evenly p-5 text-center text-themegray xl:flex-row xl:text-left">
+      <section className="flex flex-col items-center space-x-5 space-y-7 xl:flex-row xl:space-y-0">
         <div className="flex flex-col space-y-5">
           <h1 className="text-4xl font-black uppercase text-turkish">
             {project.name}
@@ -17,7 +17,7 @@ const Project = async ({ params }) => {
         <Image
           width={700}
           height={400}
-          className="shadow-xl object-cover rounded-lg flex-shrink-0 w-[600px] h-[400px]"
+          className="h-[400px] w-[600px] flex-shrink-0 rounded-lg object-cover shadow-xl"
           src={project.image}
           alt={project.imageAlt}
         />

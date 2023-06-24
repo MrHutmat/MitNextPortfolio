@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const AppDev = () => {
   return (
-    <button className="navButton text-turkish hover:bg-left-bottom hover:text-themeblack font-bold px-4 py-2 text-center ml-0 cursor-pointer">
+    <button className="navButton ml-0 cursor-pointer px-4 py-2 text-center font-bold text-turkish hover:bg-left-bottom hover:text-themeblack">
       <span>App dev</span>
     </button>
   );

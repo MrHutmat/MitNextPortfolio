@@ -1,7 +1,11 @@
-export default function page() {
+import Frontend from "@/components/skills/Frontend";
+
+const page = () => {
   return (
-    <div className="text-themegray">
-      <p>Det her er en test appdev</p>
+    <div className="mx-auto flex h-screen max-w-7xl items-center justify-center">
+      <Frontend />
     </div>
   );
-}
+};
+
+export default page;

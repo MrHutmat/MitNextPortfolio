@@ -16,7 +16,7 @@ const Logo = () => {
     //     src="/images/logo.png"
     // />
     <motion.div>
-      <h1 className="text-turkish font-black text-4xl cursor-pointer">
+      <h1 className="cursor-pointer text-4xl font-black text-turkish">
         HELSENGREN
       </h1>
     </motion.div>

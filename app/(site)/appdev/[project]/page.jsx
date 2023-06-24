@@ -6,8 +6,8 @@ const Project = async ({ params }) => {
   console.log(project.name);
 
   return (
-    <div className="h-screen text-themegray flex flex-col relative max-w-7xl justify-evenly text-center items-center">
-      <div className="items-center text-center justify-center">
+    <div className="relative flex h-screen max-w-7xl flex-col items-center justify-evenly text-center text-themegray">
+      <div className="items-center justify-center text-center">
         {project.name}
       </div>
     </div>

@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <div className="mb-10 relative z-10 h-screen flex flex-col max-w-7xl items-center justify-center text-center md:text-left mx-auto px-5 overflow-x-hidden">
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-2xl text-darkturkish">
+    <div className="relative z-10 mx-auto mb-10 flex h-screen max-w-7xl flex-col items-center justify-center overflow-x-hidden px-5 text-center md:text-left">
+      <h3 className="absolute top-24 text-2xl uppercase tracking-[20px] text-darkturkish">
         About
       </h3>
 
-      <div className="pt-[140px] space-y-5 flex flex-col md:flex-row items-center">
+      <div className="flex flex-col items-center space-y-5 pt-[140px] md:flex-row">
         <motion.img
           initial={{
             x: -200,
@@ -24,7 +24,7 @@ const About = () => {
             opacity: 1,
           }}
           src="/images/profile.jpg"
-          className="shadow-2xl w-56 h-56 object-cover rounded-full flex-shrink-0 md:w-[256px] md:h-[400px] md:rounded-2xl"
+          className="h-56 w-56 flex-shrink-0 rounded-full object-cover shadow-2xl md:h-[400px] md:w-[256px] md:rounded-2xl"
         />
         <motion.div
           initial={{
@@ -40,7 +40,7 @@ const About = () => {
             opacity: 1,
             x: 0,
           }}
-          className="px-0 md:px-10 space-y-4"
+          className="space-y-4 px-0 md:px-10"
         >
           <h4 className="text-3xl font-semibold">Lidt omkring mig.</h4>
           <p className="">

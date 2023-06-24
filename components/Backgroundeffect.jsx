@@ -14,7 +14,7 @@ const Backgroundeffect = () => {
       transition={{
         duration: 0.5,
       }}
-      className="w-full h-full top-0 absolute md:top-[13%] bg-darkturkish/20 left-0 md:h-[800px] md:-skew-y-6"
+      className="absolute left-0 top-0 h-full w-full bg-darkturkish/20 md:top-[16%] md:h-[800px] md:-skew-y-6"
     ></motion.div>
   );
 };

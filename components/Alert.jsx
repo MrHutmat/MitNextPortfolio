@@ -25,9 +25,9 @@ const Alert = ({ setAlert, keyId }) => {
         opacity: 0.5,
         x: 500,
       }}
-      className="flex items-center p-4 text-themepink rounded-md bg-themelight"
+      className="flex items-center rounded-md bg-themelight p-4 text-themepink"
     >
-      <BsFillInfoSquareFill className="flex-shrink-0 w-5 h-5" />
+      <BsFillInfoSquareFill className="h-5 w-5 flex-shrink-0" />
       <div className="ml-3 text-sm font-medium">
         <p>{setAlert}</p>
       </div>

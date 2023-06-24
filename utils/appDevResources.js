@@ -1,4 +1,4 @@
-const navigationLinks = [
+const appDevResources = [
   {
     label: "About",
     page: "/#about",
@@ -21,4 +21,4 @@ const navigationLinks = [
   },
 ];
 
-export default navigationLinks;
+export default appDevResources;

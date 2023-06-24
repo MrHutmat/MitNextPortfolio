@@ -9,49 +9,49 @@ import Image from "next/image";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import { PortableText } from "@portabletext/react";
+import Frontend from "@/components/skills/Frontend";
 
 const FrontendHome = async () => {
   const projects = await getFrontendProjects();
   const blogPosts = await getFrontendPosts();
 
   return (
-    <div className="relative mb-10 z-10 flex flex-col max-w-[1680px] items-center text-center mx-auto px-2 overflow-x-hidden">
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-2xl text-darkturkish">
-        Projects
+    <div className="relative z-10 mx-auto mb-10 flex max-w-[1680px] flex-col items-center overflow-x-hidden px-2 text-center">
+      <h3 className="absolute top-24 text-2xl uppercase tracking-[20px] text-darkturkish">
+        Frontend
       </h3>
 
-      <div className="text-themegray pt-[140px] xl:pt-[240px] mx-auto">
-        <section id="start" className="flex flex-col lg:flex-row pb-10">
+      <div className="mx-auto pt-[180px] text-themegray xl:pt-[240px]">
+        <section id="start" className="flex flex-col gap-10 pb-10 lg:flex-row">
           <Learning />
-          <Resources />
+          <Frontend />
         </section>
 
+        <h1 className="mb-20 mt-20 text-xl uppercase tracking-[4px] text-darkturkish md:text-2xl md:tracking-[20px]">
+          Læringsplan/Produkter
+        </h1>
         <section
           id="frontendBlog"
-          className="flex flex-col lg:flex-row gap-10 mx-auto justify-between"
+          className="mx-auto flex w-fit flex-col justify-between gap-10 lg:flex-row"
         >
-          <div className="grid grid-rows-2 lg:w-fit w-full mx-auto grow space-y-10">
+          <div className="flex w-full flex-1 flex-col justify-between space-y-10 lg:w-fit">
             {blogPosts.map((post) => {
               return (
                 <div
-                  className="flex flex-col text-start items-start gap-2 px-5 py-5 max-w-[715px] mx-auto bg-themelight border-spacing-30 border-none border-opacity-25 rounded-lg shadow-lg"
+                  className="border-spacing-30 mx-auto flex max-w-[715px] flex-col items-start gap-2 rounded-lg border-none border-opacity-25 bg-themelight px-5 py-5 text-start shadow-lg"
                   key={post._id}
                 >
-                  <div className="space-y-4 mx-auto">
-                    <h4 className="text-2xl text-turkish font-semibold pb-20">
+                  <div className="flex flex-col space-y-4">
+                    <h4 className="pb-20 text-2xl font-semibold text-turkish">
                       {post.name}
                     </h4>
 
-                    <>
-                      <Link
-                        key={post.name}
-                        href={`/frontend/blog/${post.slug}`}
-                      >
-                        <button className="navButton text-turkish hover:bg-left-bottom hover:text-themeblack font-bold px-4 py-2 text-center ml-0 cursor-pointer">
-                          Læs mere...
-                        </button>
-                      </Link>
-                    </>
+                    <Link key={post.name} href={`/frontend/blog/${post.slug}`}>
+                      <button className="navButton ml-0 cursor-pointer px-4 py-2 text-center font-bold text-turkish hover:bg-left-bottom hover:text-themeblack">
+                        Læs mere...
+                      </button>
+                    </Link>
+
                     <div className="flex justify-between">
                       <p>
                         Skrevet af:{" "}
@@ -65,19 +65,19 @@ const FrontendHome = async () => {
             })}
           </div>
 
-          <div className="flex-auto w-fit mx-auto">
+          <div className="flex w-full flex-1 flex-col justify-between space-y-10 lg:w-fit">
             {projects.map((project) => {
               return (
                 <div
-                  className="flex flex-col text-start items-start gap-2 py-0 max-w-[715px] mx-auto"
+                  className="mx-auto flex max-w-[636.62px] flex-col items-start gap-2 py-0 text-start lg:max-w-[715px]"
                   key={project._id}
                 >
                   <div className="flex flex-col space-y-4">
-                    <h4 className="text-2xl text-turkish font-semibold align-text-top">
+                    <h4 className="align-text-top text-2xl font-semibold text-turkish">
                       {project.name}
                     </h4>
                     <p>{project.description}</p>
-                    <div className="flex">
+                    <div className="flex pb-5">
                       <Link
                         key={project.name}
                         href={`${
@@ -87,7 +87,7 @@ const FrontendHome = async () => {
                             : `/projects/${project.slug}`
                         }`}
                       >
-                        <button className="navButton text-turkish hover:bg-left-bottom hover:text-themeblack font-bold px-4 py-2 text-center ml-0 cursor-pointer">
+                        <button className="navButton ml-0 cursor-pointer px-4 py-2 text-center font-bold text-turkish hover:bg-left-bottom hover:text-themeblack">
                           Læs mere...
                         </button>
                       </Link>
@@ -109,7 +109,7 @@ const FrontendHome = async () => {
                     alt={project.imageAlt}
                     width={715}
                     height={515}
-                    className="shadow-xl object-cover rounded-lg flex-shrink-0 w-[715] h-[515px]"
+                    className="h-[515px] w-[715] flex-shrink-0 rounded-lg object-cover shadow-xl"
                     src={project.image}
                     priority={true}
                   />
@@ -119,10 +119,15 @@ const FrontendHome = async () => {
           </div>
         </section>
 
+        <h1 className="mb-20 mt-[120px] text-xl uppercase tracking-[10px] text-darkturkish md:text-2xl md:tracking-[20px]">
+          Litteraturliste
+        </h1>
         <section
-          id="frontendProjects"
-          className="flex flex-col gap-10"
-        ></section>
+          id="frontendResources"
+          className="flex flex-col items-center gap-10"
+        >
+          <Resources />
+        </section>
       </div>
     </div>
   );

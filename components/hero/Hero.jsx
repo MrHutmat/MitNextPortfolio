@@ -7,8 +7,8 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <div className="h-screen z-10 grid place-items-center col-start-1 row-start-1 overflow-x-hidden">
-      <div className="flex flex-col lg:flex-row-reverse items-center justify-center px-5 gap-10 max-w-7xl">
+    <div className="z-10 col-start-1 row-start-1 grid h-screen place-items-center overflow-x-hidden">
+      <div className="flex max-w-7xl flex-col items-center justify-center gap-10 px-5 lg:flex-row-reverse">
         <motion.img
           initial={{
             x: 100,
@@ -22,7 +22,7 @@ const Hero = () => {
             duration: 0.5,
           }}
           src="/images/logoNoBorder.png"
-          className="md:h-[384px] md:w-[384px] w-[250px] h-[250px] max-w-sm rounded-2xl shadow-2xl"
+          className="h-[250px] w-[250px] max-w-sm rounded-2xl shadow-2xl md:h-[384px] md:w-[384px]"
         >
           {/* <Image
               alt="Profile picture"
@@ -54,7 +54,7 @@ const Hero = () => {
             Her kan du finde nogle af de forskellige ting jeg har arbejdet med
             inde for frontend, og app udvikling.
           </p>
-          <button className="text-themelight bg-turkish hover:bg-darkturkish font-bold py-2 px-4 rounded inline-flex items-center">
+          <button className="inline-flex items-center rounded bg-turkish px-4 py-2 font-bold text-themelight hover:bg-darkturkish">
             <AiOutlineFile size={25} className="mr-2" />
             <span>Her er mit CV</span>
           </button>

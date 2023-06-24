@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Fade as Hamburger } from "hamburger-react";
 import MobileNav from "./MobileNav";
+import Link from "next/link";
 //import { useWindowDimension } from "@/Hooks/useWindowDimension";
 
 {
@@ -66,15 +67,15 @@ const NavBar = () => {
   // }
 
   return (
-    <div className={`sticky top-0 ${isOpen ? "h-screen z-20" : "z-50"}`}>
+    <div className={`sticky top-0 ${isOpen ? "z-20" : "z-50"}`}>
       <nav
-        className={`z-50 md:items-center px-2 py-5 duration-500 backdrop-filter backdrop-blur-lg backdrop-saturate-200 transition-shadow bg-opacity-95 bg-themeblack ${
+        className={`z-50 bg-themeblack bg-opacity-95 px-2 py-5 backdrop-blur-lg backdrop-saturate-200 backdrop-filter transition-shadow duration-500 md:items-center ${
           isOpen || hasScrolled
             ? "shadow-[0_16px_32px_-16px_rgba(0,0,0,0.1),0_0_0_1px_rgba(0,0,0,0.1)]"
             : ""
         }`}
       >
-        <div className="flex mx-auto max-w-7xl items-center justify-between">
+        <div className="mx-auto flex max-w-7xl items-center justify-between">
           <motion.div
             initial={{
               x: -500,
@@ -91,14 +92,14 @@ const NavBar = () => {
             }}
             className=""
           >
-            <div className="md:hidden flex items-center text-turkish">
+            <div className="flex items-center text-turkish md:hidden">
               <Hamburger
                 direction="right"
                 toggled={isOpen}
                 toggle={setIsOpen}
               />
 
-              <p className="pr-3 pl-1 text-themegray font-bold text-lg">MENU</p>
+              <p className="pl-1 pr-3 text-lg font-bold text-themegray">MENU</p>
             </div>
 
             <NavItems onClick={() => setIsOpen(false)} />
@@ -120,14 +121,16 @@ const NavBar = () => {
             }}
             className=""
           >
-            <motion.h1
-              whileHover={{
-                scale: 1.1,
-              }}
-              className="text-turkish font-black text-4xl cursor-pointer"
-            >
-              HELSENGREN
-            </motion.h1>
+            <Link key={"home"} href={"/"}>
+              <motion.h1
+                whileHover={{
+                  scale: 1.1,
+                }}
+                className="cursor-pointer text-4xl font-black text-turkish"
+              >
+                HELSENGREN
+              </motion.h1>
+            </Link>
           </motion.div>
 
           <motion.div
@@ -144,7 +147,7 @@ const NavBar = () => {
             transition={{
               duration: 1,
             }}
-            className="hidden md:flex justify-center"
+            className="hidden justify-center md:flex"
           >
             <Socials />
           </motion.div>

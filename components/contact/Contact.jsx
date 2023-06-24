@@ -16,12 +16,12 @@ const Contact = () => {
   const onSubmit = (formData) => console.log(formData);
 
   return (
-    <div className="mb-10 relative h-screen z-10 flex flex-col max-w-7xl items-center justify-center text-center md:text-left mx-auto px-5 overflow-x-hidden">
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-2xl text-darkturkish">
+    <div className="relative z-10 mx-auto mb-0 flex h-screen max-w-7xl flex-col items-center justify-center overflow-x-hidden px-5 text-center md:text-left">
+      <h3 className="absolute top-24 text-2xl uppercase tracking-[20px] text-darkturkish">
         Contact
       </h3>
 
-      <div className="pt-[140px] justify-between flex flex-col mx-auto lg:space-y-12 space-y-8 w-fit">
+      <div className="mx-auto flex w-fit flex-col justify-between space-y-8 pt-[140px] lg:space-y-12">
         <motion.h4
           initial={{
             opacity: 0,
@@ -34,7 +34,7 @@ const Contact = () => {
           whileInView={{
             opacity: [0, 0.1, 0.8, 1],
           }}
-          className="text-4xl font-bold text-center"
+          className="text-center text-4xl font-bold"
         >
           Her kan du hurtigt komme i kontakt med mig, hvis du vil vide mere!
         </motion.h4>
@@ -54,16 +54,16 @@ const Contact = () => {
               opacity: 1,
               x: 0,
             }}
-            className="lg:space-y-10 px-2 flex flex-col items-start justify-between sm:flex-row lg:flex-col lg:justify-center mb-10 mx-auto"
+            className="mx-auto mb-10 flex flex-col items-start justify-between px-2 sm:flex-row lg:flex-col lg:justify-center lg:space-y-10"
           >
             <div className="flex items-center space-x-2 hover:animate-pulse">
-              <DevicePhoneMobileIcon className="text-themepink h-7 w-7" />
-              <p className="text-lg lg:text-2xl font-semibold">+45 23432371</p>
+              <DevicePhoneMobileIcon className="h-7 w-7 text-themepink" />
+              <p className="text-lg font-semibold lg:text-2xl">+45 23432371</p>
             </div>
 
             <div className="flex items-center space-x-2 hover:animate-pulse">
-              <EnvelopeIcon className="text-themepink h-7 w-7" />
-              <p className="text-lg lg:text-2xl font-semibold">
+              <EnvelopeIcon className="h-7 w-7 text-themepink" />
+              <p className="text-lg font-semibold lg:text-2xl">
                 mathias@helsengren.com
               </p>
             </div>
@@ -89,7 +89,7 @@ const Contact = () => {
               x: 0,
             }}
             noValidate
-            className="flex flex-col w-full max-w-[400px] space-y-2 mx-auto"
+            className="mx-auto flex w-full max-w-[400px] flex-col space-y-2"
             onSubmit={handleSubmit(onSubmit)}
           >
             <>
@@ -145,7 +145,7 @@ const Contact = () => {
             />
             <button
               type="submit"
-              className="flex-auto text-themeblack/90 text-xl bg-themepink hover:bg-themepink/80 font-bold py-5 rounded inline-flex justify-center"
+              className="inline-flex flex-auto justify-center rounded bg-themepink py-5 text-xl font-bold text-themeblack/90 hover:bg-themepink/80"
             >
               Send
             </button>

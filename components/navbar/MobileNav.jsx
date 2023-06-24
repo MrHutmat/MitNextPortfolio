@@ -8,23 +8,23 @@ const MobileNav = ({ isActiv, onClick }) => {
   return (
     <>
       {isActiv && (
-        <div className="md:hidden isolate grow bg-themeblack">
-          <div className="w-full pb-8 z-50 block">
+        <div className="isolate grow bg-themeblack md:hidden">
+          <div className="z-50 block w-full pb-8">
             <nav
-              className={`w-full grow pr-0 pt-4 block justify-self-center pb-3 mt-8 md:items-center md:block md:pb-0 md:mt-0 text-turkish`}
+              className={`mt-8 block w-full grow justify-self-center pb-3 pr-0 pt-4 text-turkish md:mt-0 md:block md:items-center md:pb-0`}
             >
-              <div className="md:flex md:space-x-0 md:space-y-0 space-y-2 px-3 md:px-1">
+              <div className="space-y-2 px-3 md:flex md:space-x-0 md:space-y-0 md:px-1">
                 {navLinks.map((item) => {
                   return (
                     <div
                       key={item.label}
-                      className="navButton min-w-[91px] w-[150px] md:w-auto hover:bg-left-bottom hover:text-themeblack"
+                      className="navButton w-[150px] hover:bg-left-bottom hover:text-themeblack"
                     >
                       <Link
                         key={item.linkId}
                         href={item.page}
                         scroll={false}
-                        className="font-bold px-3 py-2 text-center block ml-0 cursor-pointer"
+                        className="ml-0 block cursor-pointer px-3 py-2 text-center font-bold"
                         onClick={onClick}
                       >
                         {item.label}
@@ -33,7 +33,7 @@ const MobileNav = ({ isActiv, onClick }) => {
                   );
                 })}
               </div>
-              <div className="md:hidden flex justify-start">
+              <div className="flex justify-start md:hidden">
                 <Socials />
               </div>
             </nav>
